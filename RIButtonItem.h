@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^RISimpleAction)();
+
 @interface RIButtonItem : NSObject
 {
     NSString *label;
-    void (^action)();
+    RISimpleAction action;
 }
 @property (retain, nonatomic) NSString *label;
-@property (copy, nonatomic) void (^action)();
+@property (copy, nonatomic) RISimpleAction action;
 +(id)item;
 +(id)itemWithLabel:(NSString *)inLabel;
++(id)button:(NSString *)label action:(RISimpleAction)action;
 @end
 

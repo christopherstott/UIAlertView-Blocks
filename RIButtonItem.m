@@ -24,5 +24,12 @@
     return newItem;
 }
 
++(id)button:(NSString *)label action:(RISimpleAction)action {
+    RIButtonItem* newItem = [self itemWithLabel:label];
+    [newItem setAction:action];
+    
+    return newItem;
+}
+
 @end
 
